@@ -1,12 +1,26 @@
-
+import java.util.Scanner;
 public class main {
 
 	public static void main(String[] args) {
 		
-		int[][] matriz = {{2, 5, 6},
-						  {8, 9, 13},
-						  {31, 41, 61}};
-		System.out.println(verificadorDeAscendencia(matriz));
+		Scanner scan = new Scanner(System.in);
+		
+		System.out.println("Ingrese el numero de Filas:");
+		int numeroDeFilas = scan.nextInt();
+		
+		System.out.println("Ingrese el numero de Columnas:");
+		int numeroDeColumnas = scan.nextInt();
+		
+		int [][] matriz = new int[numeroDeFilas][numeroDeColumnas];
+		
+		System.out.println("Ingrese los datos de la matriz:");
+		for(int i = 0; i < numeroDeFilas; i++) {
+			for(int j = 0; j < numeroDeColumnas; j++) {
+				matriz[i][j] = scan.nextInt();
+			}
+		}
+		
+		System.out.println("Resultado: " + verificadorDeAscendencia(matriz));
 	}
 
 	public static boolean verificadorDeAscendencia(int [][] matrizParametro) {
